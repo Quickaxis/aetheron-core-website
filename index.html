@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheron Core | Automate Everything. Build Anything.</title>
+    <meta name="description"
+        content="Aetheron Core is an AI automation + software development studio helping businesses automate operations and build digital products fast.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#030712', // grayish dark
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#8b5cf6', // violet-500
+                        accent: '#06b6d4', // cyan-500
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="relative">
+    <!-- Particles Wrapper -->
+    <div id="tsparticles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Abstract Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="relative z-10">
+        <!-- Navbar -->
+        <nav id="navbar"
+            class="fixed w-full top-0 z-50 bg-transparent py-5 px-6 lg:px-16 flex justify-between items-center transition-all border-b border-transparent">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="./assets/logo.png" alt="Aetheron Core Logo"
+                    class="h-10 w-auto rounded-xl shadow-lg border border-white/10"
+                    onerror="this.src='https://via.placeholder.com/40x40?text=AC'">
+                <span class="font-display font-bold text-xl tracking-tight text-white drop-shadow-sm">AETHERON<span
+                        class="text-primary">CORE</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#about" class="hover:text-white hover:text-primary transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#why-us" class="hover:text-white transition-colors">Why Us</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/918822095217?text=Hi%20Aetheron%20Core,%20I%20want%20automation%20/%20website%20/%20app%20for%20my%20business"
+                    target="_blank"
+                    class="glow-effect flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm bg-gradient-primary text-white transition-all shadow-lg hover:shadow-primary/50">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2 glass rounded-lg">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 font-display text-xl transition-all h-screen w-full">
+            <a href="#about" class="active:text-primary cursor-pointer"
+                onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="#services" class="active:text-primary"
+                onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+            <a href="#why-us" class="active:text-primary"
+                onclick="document.getElementById('mobile-menu').classList.add('hidden')">Why Us</a>
+            <a href="#projects" class="active:text-primary"
+                onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects</a>
+            <a href="https://wa.me/918822095217" target="_blank"
+                class="mt-4 px-8 py-3 rounded-full font-semibold text-lg bg-gradient-primary text-white shadow-lg">WhatsApp
+                Us</a>
+        </div>
+
+        <!-- HERO SECTION -->
+        <header class="min-h-screen flex items-center justify-center text-center px-4 pt-20">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <div
+                    class="inline-flex glass px-4 py-1.5 rounded-full text-xs font-semibold text-accent mb-8 shadow-[0_0_15px_rgba(6,182,212,0.2)] reveal">
+                    <span class="flex h-2 w-2 rounded-full bg-accent mr-2 animate-pulse"></span> SYSTEM ONLINE. READY TO
+                    BUILD.
+                </div>
+
+                <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 reveal delay-100">
+                    Automate <span class="text-gradient">Everything</span>.<br>
+                    Build <span class="text-gradient">Anything</span>.
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl reveal delay-200 leading-relaxed font-light">
+                    We build AI automation, websites, and apps so businesses scale faster without technical headaches.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto reveal delay-300">
+                    <a href="#contact"
+                        class="glow-effect w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-gradient-primary shadow-lg shadow-primary/30 hover:scale-105 transition-transform flex justify-center items-center gap-2">
+                        Book Free Consultation <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+
+                    <a href="https://wa.me/918822095217?text=Hi%20Aetheron%20Core,%20I%20want%20automation%20/%20website%20/%20app%20for%20my%20business"
+                        target="_blank"
+                        class="glass w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white hover:bg-white/10 transition-colors flex justify-center items-center gap-2 border border-white/20">
+                        <i data-lucide="message-circle" class="text-green-400 w-5 h-5"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 px-6 md:px-16 container mx-auto">
+            <div
+                class="glass-card rounded-3xl p-8 md:p-14 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 reveal">
+                <div class="md:w-1/2">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Next-Generation <span
+                            class="text-gradient">Automation Studio</span></h2>
+                    <p class="text-gray-300 leading-relaxed md:text-lg">
+                        Aetheron Core is founded by young innovators. We replace manual work with intelligent systems
+                        and create powerful digital products — from hyper-converting websites to full-stack scalable
+                        applications.
+                    </p>
+                    <div class="mt-8 flex gap-4">
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-display font-bold text-accent">10x</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest mt-1">Faster Execution</span>
+                        </div>
+                        <div class="w-px bg-white/10"></div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-display font-bold text-primary">0</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest mt-1">Tech Headaches</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative flex justify-center w-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl z-0">
+                    </div>
+                    <div
+                        class="glass border border-white/20 p-2 rounded-2xl relative z-10 w-full aspect-video flex items-center justify-center overflow-hidden">
+                        <img src="./assets/logo.png" alt="Aetheron Core Interface"
+                            class="h-20 md:h-28 opacity-90 drop-shadow-2xl hover:scale-110 transition-transform duration-700">
+                        <!-- Tech overlay lines -->
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-24 px-6 md:px-16 container mx-auto relative cursor-default">
+
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Core Capabilities
+                </h2>
+                <h3 class="font-display text-4xl md:text-5xl font-bold">What <span class="text-gradient">We Build</span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">AI Automation</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Infuse artificial intelligence to automate complex
+                        data tasks natively.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-100 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/20 rounded-full blur-2xl group-hover:bg-secondary/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">Website Development</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">High-converting landing pages, robust business
+                        sites, and stunning portfolios.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-200 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-accent/20 rounded-full blur-2xl group-hover:bg-accent/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">App Development</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Performance-focused Web Applications and highly
+                        native Mobile Apps scaleable day one.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-green-400 mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="message-square" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">WhatsApp Automation</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Smart bots, CRM automation, and lead generation
+                        seamlessly via WhatsApp.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-100 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-yellow-500/20 rounded-full blur-2xl group-hover:bg-yellow-500/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-yellow-400 mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="git-merge" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">Workflow Systems</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Custom Backend systems, integration of multiple
+                        tools, and smooth operational flows.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-200 relative overflow-hidden group">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-pink-500/20 rounded-full blur-2xl group-hover:bg-pink-500/40 transition-colors">
+                    </div>
+                    <div
+                        class="h-12 w-12 rounded-xl glass flex items-center justify-center text-pink-400 mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="rocket" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold mb-3">Startup Tech Solutions</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Turning ideas into reality: From Idea to MVP, into
+                        a successful Launch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS & WHY US (COMBINED LAYOUT) -->
+        <section class="py-24 px-6 md:px-16 container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16">
+
+                <!-- How It Works -->
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="font-display text-3xl font-bold mb-10"><span class="text-gradient">How</span> It Works
+                    </h2>
+
+                    <div
+                        class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+
+                        <!-- Step 1 -->
+                        <div
+                            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-dark border-2 border-primary shrink-0 relative z-10 text-primary font-bold ml-0 md:ml-auto md:mx-auto -mr-1 md:-ml-5 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                                1
+                            </div>
+                            <div
+                                class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-5 rounded-2xl ml-4 md:ml-0 md:mr-8 md:text-right">
+                                <h4 class="font-display font-bold text-lg">Share your idea</h4>
+                                <p class="text-sm text-gray-400 mt-1">Brief us on your business goals and current
+                                    roadblocks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex items-center justify-between md:justify-normal group">
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-dark border-2 border-secondary shrink-0 relative z-10 text-secondary font-bold ml-0 md:ml-auto md:mx-auto -mr-1 md:-ml-5 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                                2
+                            </div>
+                            <div
+                                class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-5 rounded-2xl ml-4 md:ml-8 md:text-left">
+                                <h4 class="font-display font-bold text-lg">We design the solution</h4>
+                                <p class="text-sm text-gray-400 mt-1">Mapping out architecture and drafting sleek UI/UX
+                                    prototypes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div
+                            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-dark border-2 border-accent shrink-0 relative z-10 text-accent font-bold ml-0 md:ml-auto md:mx-auto -mr-1 md:-ml-5 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+                                3
+                            </div>
+                            <div
+                                class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-5 rounded-2xl ml-4 md:ml-0 md:mr-8 md:text-right">
+                                <h4 class="font-display font-bold text-lg">We build the system</h4>
+                                <p class="text-sm text-gray-400 mt-1">Rapid development with modern tech stacks and
+                                    clean code.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative flex items-center justify-between md:justify-normal group">
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-dark border-2 border-green-400 shrink-0 relative z-10 text-green-400 font-bold ml-0 md:ml-auto md:mx-auto -mr-1 md:-ml-5 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(74,222,128,0.5)]">
+                                4
+                            </div>
+                            <div
+                                class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-5 rounded-2xl ml-4 md:ml-8 md:text-left">
+                                <h4 class="font-display font-bold text-lg">You scale your business</h4>
+                                <p class="text-sm text-gray-400 mt-1">Deploy, dominate the market, and watch automation
+                                    take the heavy lifting.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Why Us -->
+                <div id="why-us" class="lg:w-1/2 reveal delay-200">
+                    <div class="glass border border-white/10 rounded-3xl p-8 relative overflow-hidden h-full">
+                        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+
+                        <h2 class="font-display text-3xl font-bold mb-8">Why <span class="text-gradient">Choose
+                                Us</span></h2>
+
+                        <ul class="space-y-5">
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-primary/20 p-2 rounded-lg text-primary"><i data-lucide="zap"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">Automation-first mindset</span>
+                                    <span class="text-sm text-gray-400">Everything we do saves you time and manual
+                                        effort.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-secondary/20 p-2 rounded-lg text-secondary"><i data-lucide="piggy-bank"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">Startup friendly pricing</span>
+                                    <span class="text-sm text-gray-400">Transparent, scalable costs meant for
+                                        early-stage growth.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-accent/20 p-2 rounded-lg text-accent"><i data-lucide="timer"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">Fast execution</span>
+                                    <span class="text-sm text-gray-400">Agile sprints and rapid delivery
+                                        protocols.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-green-500/20 p-2 rounded-lg text-green-400"><i data-lucide="hammer"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">Custom solutions</span>
+                                    <span class="text-sm text-gray-400">Made exactly to fit your specific niche
+                                        needs.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-orange-500/20 p-2 rounded-lg text-orange-400"><i data-lucide="map-pin"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">India focused market understanding</span>
+                                    <span class="text-sm text-gray-400">Deep roots and understanding of exactly how the
+                                        local businesses function.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                                <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400"><i data-lucide="users"
+                                        class="w-5 h-5"></i></div>
+                                <div>
+                                    <span class="font-semibold block">Direct founder communication</span>
+                                    <span class="text-sm text-gray-400">No red-tape. Connect directly with the
+                                        visionaries and builders.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- USE CASES / PROJECTS -->
+        <section id="projects" class="py-24 px-6 md:px-16 container mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h3 class="font-display text-4xl md:text-5xl font-bold">Use Cases & <span
+                        class="text-gradient">Solutions</span></h3>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto">Proven frameworks that deliver immediate ROI across
+                    different industries.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Case 1 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden reveal group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="h-40 bg-gradient-to-br from-blue-900/40 to-dark relative overflow-hidden flex items-center justify-center border-b border-white/10">
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+                        </div>
+                        <i data-lucide="stethoscope"
+                            class="w-16 h-16 text-blue-400/50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Healthcare</div>
+                        <h4 class="font-display text-xl font-bold mb-2">Clinic Automation</h4>
+                        <p class="text-gray-400 text-sm">Automated appointment scheduling, patient reminders via
+                            WhatsApp, and smart queue management.</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden reveal delay-100 group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="h-40 bg-gradient-to-br from-purple-900/40 to-dark relative overflow-hidden flex items-center justify-center border-b border-white/10">
+                        <i data-lucide="bar-chart-3"
+                            class="w-16 h-16 text-purple-400/50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold uppercase tracking-wider text-purple-400 mb-2">B2B Services</div>
+                        <h4 class="font-display text-xl font-bold mb-2">Marketing Agency CRM</h4>
+                        <p class="text-gray-400 text-sm">Centralized dashboard for lead tracking, automated follow-ups,
+                            and client reporting portals.</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden reveal delay-200 group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="h-40 bg-gradient-to-br from-cyan-900/40 to-dark relative overflow-hidden flex items-center justify-center border-b border-white/10">
+                        <i data-lucide="camera"
+                            class="w-16 h-16 text-cyan-400/50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Creative</div>
+                        <h4 class="font-display text-xl font-bold mb-2">Photographer Booking App</h4>
+                        <p class="text-gray-400 text-sm">Location-based availability, integrated calendar, automated
+                            invoicing, and portfolio showcase.</p>
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden reveal group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="h-40 bg-gradient-to-br from-gray-800/40 to-dark relative overflow-hidden flex items-center justify-center border-b border-white/10">
+                        <i data-lucide="monitor"
+                            class="w-16 h-16 text-gray-400/50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Online Presence</div>
+                        <h4 class="font-display text-xl font-bold mb-2">Business Website</h4>
+                        <p class="text-gray-400 text-sm">Ultra-fast, beautifully designed, and SEO-optimized business
+                            fronts utilizing next-gen React stacks.</p>
+                    </div>
+                </div>
+
+                <!-- Case 5 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden reveal delay-100 group hover:-translate-y-2 transition-transform duration-300 md:col-span-2 lg:col-span-2 h-full">
+                    <div class="h-full flex flex-col md:flex-row relative">
+                        <div class="p-6 md:w-1/2 flex flex-col justify-center">
+                            <div class="text-xs font-bold uppercase tracking-wider text-green-400 mb-2">Sales & Support
+                            </div>
+                            <h4 class="font-display text-2xl font-bold mb-3">WhatsApp AI Bot</h4>
+                            <p class="text-gray-400 text-sm mb-4">Leverage natural language AI directly connected to
+                                your WhatsApp business account to nurture leads, handle FAQs 24/7, and route complex
+                                queries to staff.</p>
+                            <a href="#contact"
+                                class="text-green-400 text-sm font-bold flex items-center gap-1 hover:text-green-300"><i
+                                    data-lucide="play-circle" class="w-4 h-4"></i> See it in action</a>
+                        </div>
+                        <div
+                            class="md:w-1/2 bg-gradient-to-l from-green-900/20 to-transparent p-6 flex items-center justify-center min-h-[160px]">
+                            <div class="glass p-4 rounded-xl shadow-2xl relative w-full max-w-[250px]">
+                                <div class="bg-dark/80 rounded-lg p-3 text-sm mb-3 text-gray-300 border border-white/5">
+                                    Hi! I want to book a consultation.</div>
+                                <div
+                                    class="bg-primary/20 rounded-lg p-3 text-sm ml-6 text-white border border-primary/30">
+                                    Hello! I can help you with that. What day works best for you?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 px-6 md:px-16 container mx-auto relative">
+            <div
+                class="glass border-2 border-primary/30 rounded-3xl p-10 md:p-20 text-center max-w-4xl mx-auto reveal relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+
+                <h2 class="relative z-10 font-display text-4xl md:text-6xl font-bold mb-6">Ready to scale?</h2>
+                <p class="relative z-10 text-gray-300 mb-10 text-lg">Stop letting inefficient processes limit your
+                    growth.<br class="hidden md:block"> Join the automation revolution.</p>
+
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <a href="https://wa.me/918822095217?text=Hi%20Aetheron%20Core,%20I%20want%20automation%20/%20website%20/%20app%20for%20my%20business"
+                        target="_blank"
+                        class="glow-effect px-10 py-5 rounded-2xl font-bold text-white text-lg bg-gradient-primary shadow-xl shadow-primary/20 hover:scale-105 transition-transform flex justify-center items-center gap-3 w-full sm:w-auto">
+                        Start Your Automation Journey <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+
+                    <div class="flex items-center gap-3 text-gray-400 font-medium">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <a href="tel:+918822095217" class="hover:text-white transition-colors">Call or WhatsApp: +91
+                            8822095217</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-white/10 pt-16 pb-8 px-6 md:px-16 mt-10">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="./assets/logo.png" alt="Aetheron Core Logo Footer"
+                        class="h-8 w-auto rounded-lg grayscale opacity-70"
+                        onerror="this.src=''; this.className='hidden';">
+                    <span class="font-display font-bold text-lg text-gray-500">AETHERON<span
+                            class="text-gray-300">CORE</span></span>
+                </div>
+
+                <div class="text-gray-500 text-sm font-medium">
+                    © Aetheron Core — Automate. Build. Scale.
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                    <a href="https://www.instagram.com/aetheroncore_/" target="_blank"
+                        class="text-gray-500 hover:text-white transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating CTA Button -->
+        <a href="https://wa.me/918822095217?text=Hi%20Aetheron%20Core,%20I%20want%20automation%20/%20website%20/%20app%20for%20my%20business"
+            target="_blank"
+            class="md:hidden fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center hover:scale-110 transition-transform">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
